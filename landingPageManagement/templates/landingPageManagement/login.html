@@ -1,0 +1,28 @@
+{% extends 'boldTemplate.html' %}
+{% block content %}
+    <div class="row">
+        <div class="large-5 small-6 medium-12 columns large-centered login-section small-centered">
+            <form id="signInForm" autocomplete="off" novalidate="novalidate" enctype="multipart/form-data"  data-abide>
+                <img src="{{ STATIC_URL }}img/logo_2049114_web.jpg" width="300" height="300">
+                <div class="user-email-id-field">
+                    <label>Email or Username
+                        <input name="userEmailId" class="order-id input-text-box" type="text">
+                    </label>
+                </div>
+                <div class="user-email-id-field">
+                    <label>Password
+                        <input name="password " class="order-id input-text-box" type="password">
+                    </label>
+                </div>
+                <ul class="inline-list">
+                    <li><a class="text-info">Forgot Password?</a></li>
+                    <li class="right"><a href="#" class="button round">Sign In</a></li>
+                </ul>
+            </form>
+            <p class="text-center alternative-links">
+                <a href="#" class="">Create account</a>
+                <p class="text-center">(or)</p>
+            </p>
+        </div>
+    </div>
+{% endblock content %}

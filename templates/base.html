@@ -1,0 +1,106 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome To PickMyProject</title>
+    <link href="{{ STATIC_URL }}css/foundation.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/foundation.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}foundation-icons/foundation-icons.css" rel="stylesheet" type="text/css">
+    <link href="{{ STATIC_URL }}css/base.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}owlcarousel/assets/owl.carousel.css" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    {% block css %} {% endblock css %}
+    <script src="{{ STATIC_URL }}js/vendor/jquery.js" type="application/javascript"></script>
+    <script src="{{ STATIC_URL }}js/foundation/foundation.js" type="application/javascript"></script>
+    <script src="{{ STATIC_URL }}js/foundation.min.js" type="application/javascript"></script>
+    <script src="{{ STATIC_URL }}js/foundation/foundation.topbar.js" type="application/javascript"></script>
+    <script src="{{ STATIC_URL }}js/foundation/foundation.orbit.js" type="application/javascript"></script>
+    <script src="{{ STATIC_URL }}js/foundation/foundation.reveal.js" type="application/javascript"></script>
+    <script src="{{ STATIC_URL }}owlcarousel/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(document).foundation();
+            $('.owl-carousel').owlCarousel({
+                items:1,
+                loop:true,
+                margin:10,
+                autoplay:true,
+                autoplayTimeout:1000,
+                autoplayHoverPause:true,
+                responsiveClass:true
+            });
+        });
+    </script>
+    {% block javascript %}{% endblock javascript %}
+    <style>
+        .owl-item{
+            width: 1000px;
+        }
+        .owl-item > img{
+            height: 400px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="row">
+    <div class="large-6 small-4 columns">
+        <img src="{{ STATIC_URL }}img/logo_2049114_web.jpg" height="150" width="150" class="left">
+    </div>
+    <div class="large-6 small-4 columns ">
+        <a class="button medium radius right" style="margin-top:30px;font-weight: bold;" href="{% url 'login-page' %}">SIGN-UP/LOGIN HERE</a>
+    </div>
+</div>
+<div class="row" style="border-bottom: 1px solid #e31e24;">
+    <div class="large-12 columns">
+        <div class="sticky">
+            <nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on: large">
+                <ul class="title-area">
+                    <li class="name">
+                    </li>
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+
+                <section class="top-bar-section">
+                    <!-- Right Nav Section -->
+                    <ul class="right" id="right-navigation">
+                        <li><a href="#">HOW WE WORK?</a></li>
+                        <li><a href="#">SEARCH PROJECTS</a></li>
+                        <li class="active"><a href="#">NEW PROJECT IDEA</a></li>
+                        <li class="has-dropdown">
+                            <a href="#">CSE/IT PROJECTS</a>
+                            <ul class="dropdown">
+                                <li class="has-dropdown">
+                                    <a href="#">B.TECH</a>
+                                    <ul class="dropdown" id="btech-dropdown">
+                                        <li><a href="#">.NET projects</a></li>
+                                        <li><a href="#">JAVA projects</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="#">M.TECH</a>
+                                    <ul class="dropdown" id="mtech-dropdown">
+                                        <li><a href="#">.NET projects</a></li>
+                                        <li><a href="#">JAVA projects</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Left Nav Section -->
+                    <ul class="left" id="left-navigation">
+                        <li><a><i class="fi-home" style="font-size: 30px;color: rgba(227,30,36,.8);"></i></a></li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+    </div>
+</div>
+{% block main_content %}
+{% endblock main_content %}
+</body>
+</html>

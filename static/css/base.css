@@ -1,0 +1,51 @@
+.top-bar{
+    background: white;
+}
+#right-navigation >li >a{
+    background: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+#left-navigation >li >a{
+    background: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+#right-navigation >li >a:hover{
+    color: #e31e24;
+    text-decoration: underline;
+}
+.toggle-topbar{
+    background-color: white;
+    color: black;
+}
+.top-bar .toggle-topbar.menu-icon a{
+    color: rgba(227,30,36,.8);
+    font-family: 'Roboto', sans-serif;
+}
+.top-bar .toggle-topbar a{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.button{
+    background-color: #2199e8;
+    font-family: 'Roboto', sans-serif;
+}
+.top-bar-section .dropdown li a{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+}
+.login-section{
+    margin-top: 50px;
+}
+.input-text-box{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}

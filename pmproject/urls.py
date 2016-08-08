@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from loginPageManagement.views import HomePage
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -6,7 +7,7 @@ admin.autodiscover()
 
 
 landing_page_urls = patterns('',
-          url(r'home/', include('landingPageManagement.urls')),
+          url(r'^user-action/', include('loginPageManagement.urls')),
 )
 
 
@@ -14,9 +15,10 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'pmproject.views.home', name='home'),
     # url(r'^pmproject/', include('pmproject.foo.urls')),
+    url(r'^$', HomePage, name='home-page'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

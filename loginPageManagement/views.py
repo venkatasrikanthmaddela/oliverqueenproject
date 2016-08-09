@@ -6,3 +6,6 @@ def HomePage(request):
 
 def LoginPage(request):
     return render(request, "loginPageManagement/login.html")
+
+def test_home(request):
+    return render(request, "newBase.html")

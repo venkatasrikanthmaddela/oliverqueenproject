@@ -5,24 +5,98 @@
         <h1 class="w3-hide-small"><img src="{{ STATIC_URL }}img/logo_2049114_web.jpg" width="350" height="250"></h1>
         <p class="w3-large">Lets Get Started With</p>
         <a role="button" class="w3-btn w3-ripple w3-padding-small w3-margin-top w3-teal">SEARCH PROJECTS</a>
-        <a role="button" class="w3-btn w3-ripple w3-padding-small w3-margin-top w3-red" href="{% url 'login-page' %}">LOGIN/SIGNUP</a>
+        <a role="button" class="w3-btn w3-ripple w3-padding-small w3-margin-top w3-teal" href="{% url 'login-page' %}">LOGIN/SIGNUP</a>
     </div>
 
     <!-- First Grid -->
-    <div class="w3-row-padding w3-padding-64 w3-container">
-        <div class="w3-content">
-            <div class="w3-twothird">
-                <h1>Lorem Ipsum</h1>
-                <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+    {#    <div class="w3-row-padding w3-padding-64 w3-container">#}
+    {#        <div class="w3-content">#}
+    {#            <div class="w3-twothird">#}
+    {#                <h1>Lorem Ipsum</h1>#}
+    {#                <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>#}
+    {##}
+    {#                <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint#}
+    {#                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco#}
+    {#                    laboris nisi ut aliquip ex ea commodo consequat.</p>#}
+    {#            </div>#}
+    {##}
+    {#            <div class="w3-third w3-center">#}
+    {#                <i class="fa fa-anchor w3-padding-64 w3-text-red" style="font-size: 200px;"></i>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
 
-                <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-container w3-center w3-padding-32">
+        <h1>HOW WE WORK</h1>
+        <a class="w3-btn w3-padding-top w3-small w3-red scroll-source" data-scroll-target=".how-we-work-scroll-end" >Take a small tour</a>
+    </div>
+
+    <div class="w3-row-padding w3-light-grey w3-padding-128 how-we-work-scroll-end">
+        <div class="w3-quarter">
+            <div class="w3-content">
+                <h1>Our Mission</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-
-            <div class="w3-third w3-center">
-                <i class="fa fa-anchor w3-padding-64 w3-text-red" style="font-size: 200px;"></i>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-card-2 w3-white">
+                <header class="w3-container w3-teal w3-center w3-text-white w3-padding-8">
+                    <i class="fa fa-hand-o-up" style="font-size:70px;color:white"></i>
+                    <h1 class="w3-xlarge">Pick Your Project</h1>
+                </header>
+                <h1 class="w3-large w3-center">Search From Our Project Library</h1>
+                <p class="w3-padding-12 w3-center">
+                    Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-card-2 w3-white">
+                <header class="w3-container w3-teal w3-center w3-text-white w3-padding-8">
+                    <i class="fa fa-gear" style="font-size:70px;color:white"></i>
+                    <h1 class="w3-xlarge">Get Project Assistance</h1>
+                </header>
+                <h1 class="w3-large w3-center">Request for our Assistance</h1>
+                <p class="w3-padding-12 w3-center">
+                    Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-card-2 w3-white">
+                <header class="w3-container w3-teal w3-center w3-text-white w3-padding-8">
+                    <i class="fa fa-smile-o" style="font-size:70px;color:white"></i>
+                    <h1 class="w3-xlarge">Get Your Project Done</h1>
+                </header>
+                <h1 class="w3-large w3-center">Hurray..! Project done</h1>
+                <p class="w3-padding-12 w3-center">
+                    Some text.. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
             </div>
         </div>
     </div>
+    <div class="w3-container w3-center w3-padding-64">
+        <h1>OUR TEAM</h1>
+        <p class="w3-large">Meet the team</p>
+    </div>
+    <div class="w3-row-padding w3-center w3-padding-64">
+        <div class="w3-container w3-third">
+            <img src="{{ STATIC_URL }}img/003-min.JPG" alt="Boss" style="width: 25%;height: 25%" class="w3-circle w3-hover-opacity">
+            <h3>Venkata Srikanth</h3>
+            <p>Software Developer</p>
+        </div>
+        <div class="w3-container w3-third">
+            <img src="{{ STATIC_URL }}img/sidhu.jpg" alt="Boss" style="width: 25%;height: 25%" class="w3-circle w3-hover-opacity">
+            <h3>Sidhu</h3>
+            <p>Software Developer</p>
+        </div>
+        <div class="w3-container w3-third">
+            <img src="{{ STATIC_URL }}img/narenra.jpg" alt="Boss" style="width: 25%;height: 25%" class="w3-circle w3-hover-opacity">
+            <h3>Narendra</h3>
+            <p>Software Developer</p>
+        </div>
+    </div>
 {% endblock main_content %}
+{% block javascript %}
+    <script src="{{ STATIC_URL }}js/loginPageManagement/loginActions.js" type="application/javascript"></script>
+{% endblock javascript %}

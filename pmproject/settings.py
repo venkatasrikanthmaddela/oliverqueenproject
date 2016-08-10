@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django_mongodb_engine',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'pmproject',
         'HOST': 'localhost',
         'PORT': 27017,

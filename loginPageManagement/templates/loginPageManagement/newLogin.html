@@ -1,58 +1,16 @@
 {% extends "newBase.html" %}
 {% block main_content %}
-    <div class="w3 row w3-padding-128">
+    <div class="w3 row w3-padding-48">
         <div class="w3-container w3-quarter"></div>
-        <div class="w3-container w3-half main-title-container">
-            <h1 class="w3-center w3-text-red w3-xlarge">PICK MY PROJECT</h1>
-            <p class="w3-center w3-large w3-hide-large" style="text-decoration: underline">Join Us. We don't spam..!</p>
-            <p class="w3-center w3-large w3-hide-small" style="text-decoration: underline">Join Us</p>
-            <p class="w3-center w3-medium w3-hide-small">We don't spam..!</p>
-            <form class="w3-container w3-padding-jumbo w3-hide-small">
-
-                <p>
-                    <label>Your Name</label>
-                    <input class="w3-input" type="text">
-                </p>
-
-                <p>
-                    <label>Email</label>
-                    <input class="w3-input" type="email">
-                </p>
-                <p>
-                    <label>Mobile Number</label>
-                    <input class="w3-input" type="number">
-                </p>
-                <p>
-                    <label>Create Password</label>
-                    <input class="w3-input" type="password">
-                </p>
-                <a class="w3-btn-block w3-ripple w3-teal">REGISTER NOW</a>
-            </form>
-
-            {#  --- Register Form For Small-Screens ----------#}
-
-             <form class="w3-container w3-hide-large">
-
-                <p>
-                    <label>Your Name</label>
-                    <input class="w3-input" type="text">
-                </p>
-
-                <p>
-                    <label>Email</label>
-                    <input class="w3-input" type="email">
-                </p>
-                <p>
-                    <label>Mobile Number</label>
-                    <input class="w3-input" type="number">
-                </p>
-                <p>
-                    <label>Create Password</label>
-                    <input class="w3-input" type="password">
-                </p>
-                <a class="w3-btn-block w3-ripple w3-teal">REGISTER NOW</a>
-            </form>
+        <div class="w3-container w3-half main-title-container registration-page w3-hide">
+            {% include "loginPageManagement/registerPage.html" %}
+        </div>
+        <div class="w3-container w3-half main-title-container  login-page">
+            {% include "loginPageManagement/loginPage.html" %}
         </div>
         <div class="w3-container w3-quarter"></div>
     </div>
 {% endblock main_content %}
+{% block javascript %}
+ <script src="{{ STATIC_URL }}js/loginPageManagement/loginActions.js" type="application/javascript"></script>
+{% endblock javascript %}

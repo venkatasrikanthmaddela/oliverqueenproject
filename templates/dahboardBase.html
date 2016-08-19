@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'linkFiles.html' %}
+<body>
+<div class="w3-container w3-top w3-light-grey w3-large w3-padding" style="z-index:4">
+  <button class="w3-btn w3-light-grey w3-hide-large w3-padding-0 w3-text-red side-nav-open-for-mobile" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-right w3-text-red ">pickmyproject</span>
+</div>
+{% block main_content %}
+{% endblock main_content %}
+</body>
+</html>

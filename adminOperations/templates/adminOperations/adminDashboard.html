@@ -1,0 +1,89 @@
+{% extends "newBase.html" %}
+{% block header_part %}
+    <li class="w3-hide-small"><a href="{% url 'upload-projects' %}" class="w3-padding-large w3-hover-white">UPLOAD PROJECTS</a></li>
+    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white">SEE PROJECT REQUESTS</a></li>
+    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white">NEW PROJECT IDEA REQUESTS</a></li>
+{% endblock header_part %}
+{% block mobile_nav_header %}
+    <li><a class="w3-padding-large" href="{% url 'upload-projects' %}">UPLOAD PROJECTS</a></li>
+    <li><a class="w3-padding-large" href="#">SEE PROJECT REQUESTS</a></li>
+    <li><a class="w3-padding-large" href="#">NEW PROJECT IDEA REQUESTS</a></li>
+{% endblock mobile_nav_header %}
+{% block main_content %}
+    <div class="w3-main" style="margin-top: 45px;">
+        <header class="w3-container w3-center" style="padding-top:22px">
+            <h5><b><i class="fa fa-dashboard"></i>Pickmyproject Dashboard</b></h5>
+        </header>
+    </div>
+    <div class="w3-row-padding w3-margin-top w3-animate-top">
+        <div class="w3-quarter ">
+            <div class="w3-container w3-teal w3-padding-16 ">
+                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>52</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>Project Requests</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-red w3-padding-16">
+                <div class="w3-left"><i class="fa fa-hand-o-up w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>52</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>New Project Ideas</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-teal w3-padding-16">
+                <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>52</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>WebSite Views</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-red w3-text-white w3-padding-16">
+                <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>50</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>Users</h4>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container w3-padding-top w3-animate-right">
+        <h5>Monthly Report</h5>
+        <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+                <td>This Month</td>
+                <td>65%</td>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>15.7%</td>
+            </tr>
+            <tr>
+                <td>Feb</td>
+                <td>5.6%</td>
+            </tr>
+            <tr>
+                <td>Spain</td>
+                <td>2.1%</td>
+            </tr>
+            <tr>
+                <td>India</td>
+                <td>1.9%</td>
+            </tr>
+            <tr>
+                <td>France</td>
+                <td>1.5%</td>
+            </tr>
+        </table>
+    </div>
+{% endblock main_content %}

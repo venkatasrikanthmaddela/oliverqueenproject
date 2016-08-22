@@ -9,9 +9,9 @@
     </li>
     <li><a href="{% url 'home-page' %}" class="w3-padding-large w3-red">HOME</a></li>
     {% block header_part %}
-    <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white scroll-source" data-scroll-target=".how-we-work-scroll-end">HOW WE WORK</a></li>
-    <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white">SEARCH PROJECTS</a></li>
-    <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white">NEW PROJECT IDEA</a></li>
+    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white scroll-source" data-scroll-target=".how-we-work-scroll-end">HOW WE WORK</a></li>
+    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white" href="{% url 'search-project' %}" >SEARCH PROJECTS</a></li>
+    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white">NEW PROJECT IDEA</a></li>
     <li class="w3-hide-small"><a href="javascript:void(0)" onclick="w3_open()">CSE/IT PROJECTS<i class="fa fa-caret-down"></i></a></li>
     <li class="w3-hide-small w3-right-align"><a class="w3-padding-large w3-hover-white scroll-source"  data-scroll-target=".contact-us-target-div">CONTACT US</a></li>
     {% endblock header_part %}
@@ -35,7 +35,7 @@
             <a href="#">Pyhton Projects</a>
         </div>
         <div class="w3-third">
-            <h3>OTHER Projects</h3><li><a class="w3-padding-large" href="#">HOW WE WORK</a></li>
+            <h3>OTHER Projects</h3>
             <a href="#">JavaScript Projects</a>
             <a href="#">Java Springs Projects</a>
             <a href="#">Django Projects</a>
@@ -50,9 +50,9 @@
 <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:51px">
     <ul class="w3-navbar w3-left-align w3-large w3-black">
         {% block mobile_nav_header %}
-        <li><a class="w3-padding-large" href="#">HOW WE WORK</a></li>
-        <li><a class="w3-padding-large" href="#">SEARCH PROJECTS</a></li>
-        <li><a class="w3-padding-large" href="#">NEW PROJECT IDEA</a></li>
+        <li><a class="w3-padding-large" >HOW WE WORK</a></li>
+        <li><a class="w3-padding-large" href="{% url 'search-project' %}">SEARCH PROJECTS</a></li>
+        <li><a class="w3-padding-large" >NEW PROJECT IDEA</a></li>
         <li><a href="javascript:void(0)" onclick="w3_open()">CSC/IT PROJECTS<i class="fa fa-caret-down"></i></a></li>
         <li class=""><a class="w3-padding-large w3-hover-white scroll-source"  data-scroll-target=".contact-us-target-div">CONTACT US</a></li>
         {% endblock mobile_nav_header %}

@@ -127,7 +127,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'pmproject',
     'loginPageManagement',
-    'adminOperations'
+    'adminOperations',
+    'allProjectsManagement'
 )
 
 

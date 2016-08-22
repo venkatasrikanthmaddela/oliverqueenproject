@@ -1,57 +1,163 @@
 {% extends 'dahboardBase.html' %}
+{% load custom_filters %}
 {% block main_content %}
-    <nav class="w3-sidenav w3-collapse w3-white w3-animate-left w3-padding-64" style="z-index:3;width:300px;" id="mySidenav"><br>
-        <div class="w3-container w3-row">
-            <div class="w3-col s4">
-                <img src="{{ STATIC_URL }}img/avathar.png" class="w3-circle w3-margin-right" style="width:46px">
-            </div>
-            <div class="w3-col s8">
-                <span>Welcome, <strong>Mike</strong></span><br>
-                <a href="#" class="w3-hover-none w3-hover-text-red w3-show-inline-block"><i class="fa fa-envelope"></i></a>
-                <a href="#" class="w3-hover-none w3-hover-text-green w3-show-inline-block"><i class="fa fa-user"></i></a>
-                <a href="#" class="w3-hover-none w3-hover-text-blue w3-show-inline-block"><i class="fa fa-cog"></i></a>
-            </div>
+
+    <div class="w3-row w3-card-4 w3-padding-48 w3-border-light-grey">
+        <div class="w3-container w3-teal">
+            <h2><i class="fa fa-upload"></i>   Upload Projects</h2>
         </div>
-        <hr>
-        <div class="w3-container">
-            <h5>Dashboard</h5>
-        </div>
-        <a href="#" class="w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black side-nav-close"  title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-        <a href="#" class="w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Upload Projects</a>
-        <a href="#" class="w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
-        <a href="#" class="w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
-        <a href="#" class="w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Geo</a>
-        <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
-        <a href="#" class="w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
-        <a href="#" class="w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
-        <a href="#" class="w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
-        <a href="#" class="w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
-    </nav>
-    <div class="w3-main" style="margin-left:300px;margin-top:43px;">
-        <div class="w3-container w3-teal w3-padding-64">
-            <h2><i class="fa fa-upload"></i>   Import Projects</h2>
-        </div>
-        <form class="w3-container w3-padding-top" id="uploadProjectForm">
+
+        <form class="w3-container w3-padding-48" id="uploadProjectForm">
+
+            <label class="w3-label w3-padding-top">Project Title</label>
+            <input class="w3-input" name="projectTitle" type="text">
+
+            <label class="w3-label w3-padding-top">Project Tech Details</label>
             <div class="w3-row-padding">
-                <div class="w3-third">
-                    <p>
-                        <label>Select Date</label>
-                        <input class="w3-input w3-border w3-padding-top" name="uploadDate" type="date" placeholder="One">
-                    </p>
+                <div class="w3-half w3-padding-top">
+                    <select class="w3-select w3-border" name="projectFramework">
+                        <option value="">Project Base FrameWork</option>
+                        <option value="java">JAVA</option>
+                        <option value="dot net">.NET</option>
+                        <option value="java springs">JAVA SPRINGS</option>
+                        <option value="advanced java">ADVANCED JAVA</option>
+                        <option value="java servlets">JAVA SERVLETS</option>
+                        <option value="python django">PYTHON DJANGO</option>
+                    </select>
                 </div>
-                <div class="w3-third">
-                    <p>
-                        <label>Select File</label>
-                        <input class="w3-padding-top" name="uploadFile" type="file">
-                    </p>
+                <div class="w3-half w3-padding-top">
+                    <select class="w3-select w3-border" name="targetStream">
+                        <option value="">Project Stream</option>
+                        <option value="B.tech">B.tech</option>
+                        <option value="M.tech">M.tech</option>
+                    </select>
                 </div>
-                <div class="w3-third">
+            </div>
+
+            <label class="w3-label w3-padding-top">IEE Papers</label>
+
+            <div class="w3-row-padding">
+                <div class="w3-half w3-padding-top">
                     <p>
-                        <label>Click to upload</label>
-                        <a class="w3-input w3-btn w3-small w3-teal w3-padding-top upload-projects" data-id="uploadProjectForm">UPLOAD</a>
-                    </p>
+                            <input class="w3-radio" type="radio" name="ieePaper" value="available">
+                        <label class="w3-validate">Available</label></p>
                 </div>
+                <div class="w3-half w3-padding-top">
+                    <p>
+                        <input class="w3-radio" type="radio" name="ieePaper" value="notAvailable">
+                        <label class="w3-validate">Not Available</label></p>
+                </div>
+            </div>
+            <label class="w3-label w3-padding-top">Project Abstract</label>
+            <textarea class="w3-input w3-padding-top w3-border" name="projectAbstract" rows="7" placeholder="Write Project Abstract"></textarea>
+            <div class="w3-container w3-center w3-padding-top">
+                <a class="w3-btn w3-large w3-red w3-padding-top upload-project" data-id="uploadProjectForm">Upload Project</a>
             </div>
         </form>
+        <footer class="w3-container w3-teal">
+            <p><a class="scroll-source" href="#" data-scroll-target=".recent-uploads-target">See Recent Uploads</a></p>
+        </footer>
     </div>
+
+    <div class="w3-container w3-center w3-padding-48 recent-uploads-target">
+        <h4>Recent Uploads</h4>
+    </div>
+    {% for each_project in recentUploads %}
+        <div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal">
+            <div class="w3-row">
+                <div class="w3-col l8 s12">
+                    <h3 class="w3-left">{{ each_project.project_title }}</h3><br>
+                    <p class="w3-left">{{ each_project.abstract }}</p>
+                </div>
+                <div class="w3-col l4 s12">
+                    <p><b>Date:</b>{{ each_project.createdAt|getISTTimeFromUTCTime }}</p>
+                    <p><b>Uploded By:</b>  {{ each_project.uploaded_user }}</p>
+                    <p><b>Language:</b>  {{ each_project.project_frame_work }}</p>
+                    <p><b>Project For:</b> {{ each_project.target_stream }}</p>
+                    <p><b>IEE Paper:</b> {{ each_project.iee_paper }}</p>
+                    <div class="w3-container w3-center">
+                        <a class="w3-text-red edit-project" href="#"
+                           data-id="{{ each_project.id }}" data-title="{{ each_project.project_title }}"
+                           data-framework="{{ each_project.project_frame_work }}" data-target-stream="{{ each_project.target_stream }}"
+                           {% if each_project.iee_paper %} data-iee-papers= "available" {% else %} data-iee-papers= "notAvailable" {% endif %}data-abstract="{{ each_project.abstract }}"><i class="fa fa-edit"></i>  Edit Details</a>
+                        <a class="w3-text-red delete-project" data-id="{{ each_project.id }}" href=""><i class="fa fa-remove"></i>  Delete Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div id="uploadSuccess" class="w3-modal">
+        <div class="w3-modal-content w3-container w3-center w3-padding-48">
+            <span onclick="document.getElementById('uploadSuccess').style.display='none'"
+                  class="w3-closebtn">&times;</span>
+            <h3><i class="fa fa-thumbs-up w3-text-green">  project uploaded successfully</i></h3>
+        </div>
+    </div>
+
+    <div id="deleteSuccess" class="w3-modal">
+        <div class="w3-modal-content w3-container w3-center w3-padding-48">
+            <span onclick="document.getElementById('deleteSuccess').style.display='none'"
+                  class="w3-closebtn">&times;</span>
+            <h3><i class="fa fa-thumbs-up w3-text-red">  project deleted successfully</i></h3>
+        </div>
+    </div>
+
+    <div id="projectEditModal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top">
+            <div class="w3-container w3-teal">
+                <span onclick="document.getElementById('projectEditModal').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Close Modal">&times;</span>
+                <h3><i class="fa fa-edit">  Edit Project Details</i></h3>
+            </div>
+            <form class="w3-container" id="updateProjectForm">
+                <label class="w3-label w3-padding-top">Project Title</label>
+                <input class="w3-input" name="projectTitle" type="text">
+
+                <label class="w3-label w3-padding-top">Project Tech Details</label>
+                <div class="w3-row-padding">
+                    <div class="w3-half w3-padding-top">
+                        <select class="w3-select w3-border" name="projectFramework">
+                            <option value="">Project Base FrameWork</option>
+                            <option value="java">JAVA</option>
+                            <option value="dot net">.NET</option>
+                            <option value="java springs">JAVA SPRINGS</option>
+                            <option value="advanced java">ADVANCED JAVA</option>
+                            <option value="java servlets">JAVA SERVLETS</option>
+                            <option value="python django">PYTHON DJANGO</option>
+                        </select>
+                    </div>
+                    <div class="w3-half w3-padding-top">
+                        <select class="w3-select w3-border" name="targetStream">
+                            <option value="">Project Stream</option>
+                            <option value="B.tech">B.tech</option>
+                            <option value="M.tech">M.tech</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label class="w3-label w3-padding-top">IEE Papers</label>
+
+                <div class="w3-row-padding">
+                    <div class="w3-half w3-padding-top">
+                        <p>
+                            <input class="w3-radio" type="radio" data-label="available" name="ieePaper" value="available">
+                            <label class="w3-validate">Available</label></p>
+                    </div>
+                    <div class="w3-half w3-padding-top">
+                        <p>
+                            <input class="w3-radio" type="radio" data-label="notAvailable" name="ieePaper" value="notAvailable">
+                            <label class="w3-validate">Not Available</label></p>
+                    </div>
+                </div>
+                <label class="w3-label w3-padding-top">Project Abstract</label>
+                <textarea class="w3-input w3-padding-top w3-border" name="projectAbstract" rows="7" placeholder="Write Project Abstract"></textarea>
+                <input type="hidden" name="projectId">
+                <div class="w3-container w3-center w3-padding-top">
+                    <a class="w3-btn w3-large w3-red w3-padding-top update-project" data-id="updateProjectForm">Update Project</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
 {% endblock main_content %}

@@ -1,30 +1,20 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Welcome To PickMyProject</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ STATIC_URL }}css/w3.css" rel="stylesheet" type="text/css">
-    <link href="{{ STATIC_URL }}css/base.css" rel="stylesheet" type="text/css">
-    <link href="{{ STATIC_URL }}icons/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-
-    <script src="{{ STATIC_URL }}js/vendor/jquery.js" type="application/javascript"></script>
-    {% block javascript %}{% endblock javascript %}
-
-</head>
+{% include 'linkFiles.html' %}
 <body>
 <ul class="w3-navbar w3-light-grey w3-card-2 w3-top w3-left-align w3-large w3-text-black top-navigation">
     <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
         <a class="w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     </li>
     <li><a href="{% url 'home-page' %}" class="w3-padding-large w3-red">HOME</a></li>
-    <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white">HOW WE WORK</a></li>
-    <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white">SEARCH PROJECTS</a></li>
-    <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white">NEW PROJECT IDEA</a></li>
+    {% block header_part %}
+    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white scroll-source" data-scroll-target=".how-we-work-scroll-end">HOW WE WORK</a></li>
+    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white" href="{% url 'search-project' %}" >SEARCH PROJECTS</a></li>
+    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white">NEW PROJECT IDEA</a></li>
     <li class="w3-hide-small"><a href="javascript:void(0)" onclick="w3_open()">CSE/IT PROJECTS<i class="fa fa-caret-down"></i></a></li>
-    <li class="w3-hide-small w3-right-align"><a href="#" class="w3-padding-large w3-hover-white">CONTACT US</a></li>
+    <li class="w3-hide-small w3-right-align"><a class="w3-padding-large w3-hover-white scroll-source"  data-scroll-target=".contact-us-target-div">CONTACT US</a></li>
+    {% endblock header_part %}
 </ul>
 
 <nav class="w3-dropnav w3-card-2 w3-light-grey w3-padding-48" style="display:none" id="myDropnav">
@@ -56,12 +46,16 @@
 
 
 <!-- Navbar on small screens -->
+
 <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:51px">
     <ul class="w3-navbar w3-left-align w3-large w3-black">
-        <li><a class="w3-padding-large" href="#">HOW WE WORK</a></li>
-        <li><a class="w3-padding-large" href="#">SEARCH PROJECTS</a></li>
-        <li><a class="w3-padding-large" href="#">NEW PROJECT IDEA</a></li>
+        {% block mobile_nav_header %}
+        <li><a class="w3-padding-large" >HOW WE WORK</a></li>
+        <li><a class="w3-padding-large" href="{% url 'search-project' %}">SEARCH PROJECTS</a></li>
+        <li><a class="w3-padding-large" >NEW PROJECT IDEA</a></li>
         <li><a href="javascript:void(0)" onclick="w3_open()">CSC/IT PROJECTS<i class="fa fa-caret-down"></i></a></li>
+        <li class=""><a class="w3-padding-large w3-hover-white scroll-source"  data-scroll-target=".contact-us-target-div">CONTACT US</a></li>
+        {% endblock mobile_nav_header %}
     </ul>
 </div>
 

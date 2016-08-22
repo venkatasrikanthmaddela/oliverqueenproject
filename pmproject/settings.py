@@ -126,8 +126,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'pmproject',
-    'loginPageManagement'
+    'loginPageManagement',
+    'adminOperations',
+    'allProjectsManagement'
 )
+
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 

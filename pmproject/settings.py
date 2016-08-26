@@ -13,15 +13,18 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'pmproject',
+        # 'HOST': 'localhost',
+        # 'USER': 'root',
+        # 'PASSWORD': 'root',
+        # 'PORT': 3306,
+        # 'OPTIONS': {
+        # 'autocommit': True,
+        # },
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'pmproject',
-        'HOST': 'localhost',
-        'PORT': 27017,
-        'OPTIONS': {
-            'OPERATIONS': {
-                'save': {'w': 1}
-            }
-        }                     # Set to empty string for default.
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # Set to empty string for default.
     }
 }
 
@@ -82,7 +85,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -92,7 +95,7 @@ SECRET_KEY = 'q2$$i8iq(jo8sv#lw45z8z+h0@lris90q3-)ll((yk0-@9j02r'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -111,7 +114,7 @@ ROOT_URLCONF = 'pmproject.urls'
 WSGI_APPLICATION = 'pmproject.wsgi.application'
 
 TEMPLATE_DIRS = (
-      os.path.join(BASE_DIR, "templates"),
+    os.path.join(BASE_DIR, "templates"),
 )
 
 INSTALLED_APPS = (
@@ -130,7 +133,6 @@ INSTALLED_APPS = (
     'adminOperations',
     'allProjectsManagement'
 )
-
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 

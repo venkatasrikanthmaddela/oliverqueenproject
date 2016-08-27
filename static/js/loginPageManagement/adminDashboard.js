@@ -4,6 +4,7 @@
 $( document ).ready(function() {
     $(".side-nav-open-for-mobile").click(function(){
         sideNavOpen()
+
     });
     $(".side-nav-close").click(function(){
         sideNavClose();

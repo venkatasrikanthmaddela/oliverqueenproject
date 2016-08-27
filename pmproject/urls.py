@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from loginPageManagement.views import HomePage, test_home, search_project
+from loginPageManagement.views import HomePage, test_home, search_project,newprojectIdea
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -21,7 +21,8 @@ urlpatterns = patterns('',
     # url(r'^pmproject/', include('pmproject.foo.urls')),
     url(r'^$', HomePage, name='home-page'),
     url(r'^test-home$', test_home),
-    url(r'^search-project', search_project, name="search-project")
+    url(r'^search-project', search_project, name="search-project"),
+    url(r'^new-project-idea',newprojectIdea, name='new-project-idea')
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

@@ -26,4 +26,4 @@ def newprojectIdea(request):
 
 def NewProjectIdeaPost(request):
     def get(self, request):
-        return render(request, "loginPageManagement/home.html")
+        return render(request, 'loginPageManagement/newProjectIdea.html')

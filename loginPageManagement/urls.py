@@ -3,5 +3,5 @@ from loginPageManagement.views import LoginPage,NewProjectIdeaPost
 
 urlpatterns = patterns('',
    url(r'login', LoginPage, name='login-page'),
-   url(r'new-project-ideas', NewProjectIdeaPost, name="new-project-idea"),
+   url(r'new-project-ideas', NewProjectIdeaPost, name="new-project-idea-posting"),
 )

@@ -13,17 +13,18 @@ class UploadProjects(APIView):
         targetStream = project_data.get("targetStream")
         ieePaper = True if project_data.get("ieePaper") == "available" else False
         projectAbstract = project_data.get("projectAbstract")
-        project_data_object = ProjectUploads(project_title=projectTitle, project_frame_work=projectFramework, target_stream=targetStream,
-                       iee_paper=ieePaper, abstract=projectAbstract, uploaded_user="srikanth")
+        project_data_object = ProjectUploads(project_title=projectTitle, project_frame_work=projectFramework,
+                                             target_stream=targetStream,
+                                             iee_paper=ieePaper, abstract=projectAbstract, uploaded_user="srikanth")
         project_data_object.save()
-        return Response({'result':'success'}, 200)
+        return Response({'result': 'success'}, 200)
 
     def delete(self, request):
         delete_data = request.DATA
         project_data = ProjectUploads.objects.get(id=delete_data.get("orderId"))
         project_data.isDeleted = True
         project_data.save()
-        return Response({'result':'success'}, 200)
+        return Response({'result': 'success'}, 200)
 
     def put(self, request):
         update_form_data = request.DATA
@@ -34,4 +35,7 @@ class UploadProjects(APIView):
         project_data.iee_paper = True if update_form_data.get("ieePaper") == "available" else False
         project_data.abstract = update_form_data.get("projectAbstract")
         project_data.save()
-        return Response({"result":"success"}, 200)
+        return Response({"result": "success"}, 200)
+
+
+

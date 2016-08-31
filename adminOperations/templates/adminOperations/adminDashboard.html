@@ -2,12 +2,12 @@
 {% block header_part %}
     <li class="w3-hide-small"><a href="{% url 'upload-projects' %}" class="w3-padding-large w3-hover-white">UPLOAD PROJECTS</a></li>
     <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white">SEE PROJECT REQUESTS</a></li>
-    <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white">NEW PROJECT IDEA REQUESTS</a></li>
+    <li class="w3-hide-small"><a href="/api/admin/new-projects-idea-request" class="w3-padding-large w3-hover-white">NEW PROJECT IDEA REQUESTS</a></li>
 {% endblock header_part %}
 {% block mobile_nav_header %}
     <li><a class="w3-padding-large" href="{% url 'upload-projects' %}">UPLOAD PROJECTS</a></li>
     <li><a class="w3-padding-large" href="#">SEE PROJECT REQUESTS</a></li>
-    <li><a class="w3-padding-large" href="#">NEW PROJECT IDEA REQUESTS</a></li>
+    <li><a class="w3-padding-large" href="/api/admin/new-projects-idea-request">NEW PROJECT IDEA REQUESTS</a></li>
 {% endblock mobile_nav_header %}
 {% block main_content %}
     <div class="w3-main" style="margin-top: 45px;">

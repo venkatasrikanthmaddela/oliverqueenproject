@@ -12,7 +12,7 @@ landing_page_urls = patterns('',
 admin_page_urls = patterns('',
                            url(r'admin/', include('adminOperations.urls')),
                            url(r'api/admin/', include('adminOperations.api_urls')),
-                           url(r'api/student/', include('loginPageManagement.api_urls')),
+                           # url(r'api/student/', include('loginPageManagement.api_urls')),
                            url(r'api/admin/',include('adminOperations.api_urls'))
 )
 

@@ -15,33 +15,34 @@
                 </div>
             </form>
 
-
-            {% for each_project in allProjects %}
-                <div class="w3-container w3-center w3-padding-12">
-                    <div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal">
-                        <div class="w3-row">
-                            <div class="w3-col l8 s12">
-                                <h3 class="w3-left">{{ each_project.project_title }}</h3><br>
-                                <p class="w3-left">{{ each_project.abstract }}</p>
-                            </div>
-                            <div class="w3-col l4 s12">
-                                <p><b>Date:</b>{{ each_project.createdAt|getISTTimeFromUTCTime }}</p>
-                                <p><b>Uploded By:</b>  {{ each_project.uploaded_user }}</p>
-                                <p><b>Language:</b>  {{ each_project.project_frame_work }}</p>
-                                <p><b>Project For:</b> {{ each_project.target_stream }}</p>
-                                <p><b>IEE Paper:</b> {{ each_project.iee_paper }}</p>
-                                <div class="w3-container w3-center">
-                                    <a class="w3-text-red edit-project" href="#"
-                                       data-id="{{ each_project.id }}" data-title="{{ each_project.project_title }}"
-                                       data-framework="{{ each_project.project_frame_work }}" data-target-stream="{{ each_project.target_stream }}"
-                                            {% if each_project.iee_paper %} data-iee-papers= "available" {% else %} data-iee-papers= "notAvailable" {% endif %}data-abstract="{{ each_project.abstract }}"><i class="fa fa-edit"></i>  Edit Details</a>
-                                    <a class="w3-text-red delete-project" data-id="{{ each_project.id }}" href=""><i class="fa fa-remove"></i>  Delete Project</a>
+            {% if allProjects|length > 0 %}
+                {% for each_project in allProjects %}
+                    <div class="w3-container w3-center w3-padding-12">
+                        <div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal">
+                            <div class="w3-row">
+                                <div class="w3-col l8 s12">
+                                    <h3 class="w3-left">{{ each_project.project_title }}</h3><br>
+                                    <p class="w3-left">{{ each_project.abstract }}</p>
+                                </div>
+                                <div class="w3-col l4 s12">
+                                    <p><b>Date:</b>{{ each_project.createdAt|getISTTimeFromUTCTime }}</p>
+                                    <p><b>Uploded By:</b>  {{ each_project.uploaded_user }}</p>
+                                    <p><b>Language:</b>  {{ each_project.project_frame_work }}</p>
+                                    <p><b>Project For:</b> {{ each_project.target_stream }}</p>
+                                    <p><b>IEE Paper:</b> {{ each_project.iee_paper }}</p>
+                                    <div class="w3-container w3-center">
+                                        <a class="w3-text-red edit-project" href="#"
+                                           data-id="{{ each_project.id }}" data-title="{{ each_project.project_title }}"
+                                           data-framework="{{ each_project.project_frame_work }}" data-target-stream="{{ each_project.target_stream }}"
+                                                {% if each_project.iee_paper %} data-iee-papers= "available" {% else %} data-iee-papers= "notAvailable" {% endif %}data-abstract="{{ each_project.abstract }}"><i class="fa fa-edit"></i>  Edit Details</a>
+                                        <a class="w3-text-red delete-project" data-id="{{ each_project.id }}" href=""><i class="fa fa-remove"></i>  Delete Project</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% endif %}
 
         </div>
         <div class="w3-col m1 w3-hide-small"><p></p></div>

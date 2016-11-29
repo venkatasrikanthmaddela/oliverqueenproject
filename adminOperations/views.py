@@ -2,7 +2,6 @@ from rest_framework.compat import View
 from django.shortcuts import render
 
 from adminOperations.models import ProjectUploads
-from loginPageManagement.models import NewProjectIdeaUploads
 
 
 class AdminUserPage(View):
@@ -23,6 +22,6 @@ class ImportProjectsPage(View):
 
 class NewProjectIdeaRequestsPage(View):
     def get(self, request):
-        new_project_idea_requests = NewProjectIdeaUploads.objects.filter(isDeleted=False).order_by('-createdAt')
+        # new_project_idea_requests = NewProjectIdeaUploads.objects.filter(isDeleted=False).order_by('-createdAt')
         return render(request, 'adminOperations/newProjectIdeaRequest.html',
                       {"newProjectIdeaRequests": new_project_idea_requests})

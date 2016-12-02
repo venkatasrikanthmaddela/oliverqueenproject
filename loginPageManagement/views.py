@@ -4,7 +4,7 @@ from adminOperations.models import ProjectUploads
 
 
 def HomePage(request):
-    return render(request, 'loginPageManagement/home.html')
+    return render(request, 'loginPageManagement/home.html', {"request":request})
 
 
 def LoginPage(request):

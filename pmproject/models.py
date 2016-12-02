@@ -1,7 +1,12 @@
 from django.db import models
 
 from datetime import datetime
+from django_mongodb_engine.contrib import MongoDBManager
 
+
+class CustomManager(MongoDBManager):
+    def get_query_set(self):
+        return super(CustomManager, self).get_query_set().filter(isDeleted=False)
 
 class CustomModel(models.Model):
     createdAt = models.DateTimeField(default=datetime.utcnow())

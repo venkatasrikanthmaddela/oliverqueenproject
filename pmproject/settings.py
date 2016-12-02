@@ -22,8 +22,17 @@ DATABASES = {
         # 'OPTIONS': {
         # 'autocommit': True,
         # },
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django_mongodb_engine',
+        'NAME': 'pm_db',
+        'HOST': 'localhost',
+        'PORT': 27017,
+        'OPTIONS': {
+            'OPERATIONS': {
+                'save': {'w': 1}
+            }
+        }
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # Set to empty string for default.
     }
 }
@@ -128,10 +137,12 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'rest_framework',
     'pmproject',
     'loginPageManagement',
     'adminOperations',
-    'allProjectsManagement'
+    'allProjectsManagement',
+    'userManagement',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
@@ -164,3 +175,5 @@ LOGGING = {
         },
     }
 }
+
+AUTH_USER_MODEL = 'userManagement.PmUser'

@@ -14,7 +14,7 @@ admin_page_urls = patterns('',
                            url(r'api/admin/', include('adminOperations.api_urls')),
                            # url(r'api/student/', include('loginPageManagement.api_urls')),
                            url(r'api/admin/',include('adminOperations.api_urls'))
-)
+                           )
 
 urlpatterns = patterns('',
                        # Examples:
@@ -23,14 +23,19 @@ urlpatterns = patterns('',
                        url(r'^$', HomePage, name='home-page'),
                        url(r'^test-home$', test_home),
                        url(r'^search-project', search_project, name="search-project"),
-                       url(r'^new-project-idea', newprojectIdea, name='new-project-idea')
+                       url(r'^new-project-idea', newprojectIdea, name='new-project-idea'),
 
                        # Uncomment the admin/doc line below to enable admin documentation:
                        # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
                        # Uncomment the next line to enable the admin:
-                       # url(r'^admin/', include(admin.site.urls)),
+                       url(r'^admin/', include(admin.site.urls)),
                        )
+
+login_pattern_urls = patterns('',
+                          url(r'^account/api/', include('userManagement.api_urls')),
+                          )
 
 urlpatterns += landing_page_urls
 urlpatterns += admin_page_urls
+urlpatterns += login_pattern_urls

@@ -23,7 +23,6 @@ urlpatterns = patterns('',
                        url(r'^$', HomePage, name='home-page'),
                        url(r'^test-home$', test_home),
                        url(r'^search-project', search_project, name="search-project"),
-                       url(r'^new-project-idea', newprojectIdea, name='new-project-idea'),
 
                        # Uncomment the admin/doc line below to enable admin documentation:
                        # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -36,6 +35,17 @@ login_pattern_urls = patterns('',
                           url(r'^account/api/', include('userManagement.api_urls')),
                           )
 
+new_project_idea_urls = patterns('',
+                                 url(r'new-project-idea/', include('newProjectIdeaManagement.urls')),
+                                 url(r'api/new-project-idea/', include('newProjectIdeaManagement.api_urls'))
+                                 )
+
+user_dashboard_urls = patterns('',
+                               url(r'user-action/my-account', include('userDashboardManagement.urls')),
+                               )
+
 urlpatterns += landing_page_urls
 urlpatterns += admin_page_urls
 urlpatterns += login_pattern_urls
+urlpatterns += new_project_idea_urls
+urlpatterns += user_dashboard_urls

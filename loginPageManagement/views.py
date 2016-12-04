@@ -17,7 +17,7 @@ def test_home(request):
 
 def search_project(request):
     all_open_projects = ProjectUploads.objects.filter(isDeleted=False).order_by('-createdAt')
-    return render(request, "allProjectsManagement/searchProjects.html", {"allProjects": all_open_projects})
+    return render(request, "allProjectsManagement/searchProjects.html", {"allProjects": all_open_projects, "request":request})
 
 
 def newprojectIdea(request):

@@ -51,7 +51,9 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = '57946ef49056bc30f252c6fd'
+# SITE_ID = '57946ef49056bc30f252c6fd'
+
+SITE_ID = '584116f89056bc207e3de213'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -143,6 +145,8 @@ INSTALLED_APPS = (
     'adminOperations',
     'allProjectsManagement',
     'userManagement',
+    'newProjectIdeaManagement',
+    'userDashboardManagement',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

@@ -1,0 +1,71 @@
+{% extends 'newBase.html' %}
+{% block main_content %}
+    <div class="w3-row w3-padding-128">
+        <div class="w3-col s12 l8" style="">
+            <form class="w3-container w3-card-4 w3-white" id="projectIdeaForm">
+                <h3 class="w3-center" style="text-decoration: underline">Post New Project Idea</h3>
+                <p class="w3-center">We will get it done for you</p>
+                <div class="w3-group">
+                    <label class="w3-label">Your Name</label>
+                    <input class="w3-input" name="customerName" type="text">
+                </div>
+                <div class="w3-group">
+                    <label class="w3-label">Email</label>
+                    <input class="w3-input" name="customerEmail" type="text">
+                </div>
+                <div class="w3-group">
+                    <label class="w3-label">Phone No</label>
+                    <input class="w3-input" name="customerMobile" type="number">
+                </div>
+                <div class="w3-group">
+                    <label class="w3-label">Technical details</label>
+                    <div class="w3-row-padding">
+                        <div class="w3-half w3-padding-top">
+                            <select class="w3-select w3-border" name="projectFramework">
+                                <option value="">Prefered Language to develop</option>
+                                <option value="java">JAVA</option>
+                                <option value="dot net">.NET</option>
+                                <option value="java springs">JAVA SPRINGS</option>
+                                <option value="advanced java">ADVANCED JAVA</option>
+                                <option value="java servlets">JAVA SERVLETS</option>
+                                <option value="python django">PYTHON DJANGO</option>
+                                <option value="others">OTHERS</option>
+                            </select>
+                        </div>
+                        <div class="w3-half w3-padding-top">
+                            <select class="w3-select w3-border" name="targetStream">
+                                <option value="">Project Stream</option>
+                                <option value="B.tech">B.tech</option>
+                                <option value="M.tech">M.tech</option>
+                                <option value="Independent">Independent</option>
+                                <option value="LiveProject">Live Project</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-group">
+                    <label class="w3-label">Project Title</label>
+                    <input class="w3-input" name="projectTitle" type="text">
+                </div>
+                <div class="w3-group">
+                    <textarea class="w3-input" name="projectDescription" placeholder="Write your project description" required></textarea>
+                    <label class="w3-label"></label>
+                </div>
+                <div class="w3-group w3-center">
+                    <a type="button" class="w3-btn w3-center w3-teal w3-large sendNewProjectIdea" data-form-id="projectIdeaForm" onclick="sendProjectIdea(this)">SEND PROJECT IDEA</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="w3-container w3-padding">
+        <div class="w3-panel w3-leftbar w3-sand w3-large">
+            <i>"We are ready to explore more ideas to implement.for further more updates get in touch with us."</i>
+            <a href="#" ><i class="fa fa-facebook-official"></i></a>
+            <a href="#"><i class="fa fa-flickr"></i></a>
+            <a href="#" ><i class="fa fa-instagram"></i></a>
+            <a href="#" ><i class="fa fa-twitter"></i></a>
+            <a href="#" ><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>
+    {% include 'loginModal.html' %}
+{% endblock main_content %}

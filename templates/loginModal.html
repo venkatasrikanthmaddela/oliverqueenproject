@@ -1,0 +1,60 @@
+<div id="loginModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-8">
+        <div class="w3-row">
+            <span onclick="document.getElementById('loginModal').style.display='none'"
+                  class="w3-closebtn">&times;</span>
+        </div>
+        <div class="w3-row">
+            <div class="w3-col m6 l6">
+                <form class="w3-container w3-card-4 w3-white">
+                    <p class="w3-center">Login Here</p>
+                    <div class="w3-group">
+                        <label class="w3-label">Email</label>
+                        <input class="w3-input" id="login-email-id" type="email">
+                    </div>
+                    <div class="w3-group">
+                        <label class="w3-label">Password</label>
+                        <input class="w3-input" id="login-password" type="password">
+                    </div>
+                    <div class="w3-group w3-right">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <div class="w3-group w3-center">
+                        <a type="button" class="w3-btn w3-center w3-red w3-small loginFromModal">LOGIN</a>
+                    </div>
+                    <div class="w3-container w3-padding">
+                        <p class="w3-center">You can login with</p>
+                        <div class="w3-container">
+                            <span class="w3-badge w3-xxlarge w3-blue"><i class="fa fa-facebook-official"></i></span>
+{#                            <span class="w3-badge w3-jumbo w3-blue"><i class="fa fa-twitter-official"></i></span>#}
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="w3-col m6 l6">
+                <form class="w3-container w3-card-4 w3-white">
+                    <p class="w3-center">Register Here</p>
+                    <div class="w3-group">
+                        <label class="w3-label">Your Name</label>
+                        <input class="w3-input" id="customer-user-name" type="text">
+                    </div>
+                    <div class="w3-group">
+                        <label class="w3-label">Email</label>
+                        <input class="w3-input" id="customer-email" type="email">
+                    </div>
+                    <div class="w3-group">
+                        <label class="w3-label">Mobile Number</label>
+                        <input class="w3-input" id="customer-mobile" type="number">
+                    </div>
+                    <div class="w3-group">
+                        <label class="w3-label">Create Password</label>
+                        <input class="w3-input" id="customer-password" type="password">
+                    </div>
+                    <div class="w3-group w3-center">
+                        <a type="button" class="w3-btn w3-center w3-teal w3-small registerFromModal">REGISTER</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

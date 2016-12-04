@@ -22,6 +22,20 @@ class CustomUserManager(BaseUserManager,CustomManager):
         user.set_password(password)
         user.save()
         return user
+    def create_superuser(self, email, password):
+        user = self.model(
+            email=CustomUserManager.normalize_email(email),
+            phoneNumber="",
+            name=email,
+            type='admin',
+            is_staff='true',
+            sources='',
+            additionalInfo={},
+            is_email_subscribed=False
+        )
+        user.set_password(password)
+        user.save()
+        return user
 
 class PmUser(AbstractBaseUser):
     name = models.CharField(max_length=30, blank=False)

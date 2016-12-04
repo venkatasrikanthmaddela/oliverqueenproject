@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load custom_filters %}
 <!DOCTYPE html>
 <html lang="en">
 {% include 'linkFiles.html' %}
@@ -16,14 +17,14 @@
         <li class="w3-hide-small w3-right-align"><a class="w3-padding-large w3-hover-white scroll-source"  data-scroll-target=".contact-us-target-div">CONTACT US</a></li>
         {% if request.user.email %}
             <li class="w3-hide-small w3-right-align"><p class="w3-padding-large">Hi, {{ request.user.name }}</p></li>
-            <li><div class="w3-dropdown-hover w3-right">
-                <img src="{{ STATIC_URL }}img/avathar.png" width="50px;" class="w3-circle w3-tiny">
-                <div class="w3-dropdown-content w3-border profile-drop-down">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="{% url 'log-out' %}">logout</a>
+                <div class="w3-dropdown-hover">
+                    <span class="w3-dropdown-hover w3-badge w3-large w3-teal w3-padding" style="margin-top:25px;">{{ request.user.name|getNameLabel }}</span>
+                    <div class="w3-dropdown-content w3-border profile-drop-down">
+                        <a href="#">Link 1</a>
+                        <a href="{% url 'my-account' %}">my account</a>
+                        <a href="{% url 'log-out' %}">logout</a>
+                    </div>
                 </div>
-            </div></li>
         {% endif %}
     {% endblock header_part %}
 </ul>
@@ -72,6 +73,45 @@
 
 {% block main_content %}
 {% endblock main_content %}
+
+{% block footer %}
+    <div class="w3-container w3-light-grey">
+        <div class="w3-row w3-padding-48">
+            <div class="w3-col m5">
+                <div class="w3-container">
+                    <div class="w3-padding-16 contact-us-target-div"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+                    <h3>Address</h3>
+                    <p>Will Be Updated Soon...</p>
+                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Ameerpet, Hyderabad</p>
+                    <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  pickmyproject@gmail.com</p>
+                </div>
+            </div>
+            <div class="w3-col m7">
+                <form class="w3-container w3-card-4 w3-padding-16 w3-white">
+                    <p class="w3-center w3-xlarge">Other requirements? Write us here. We will contact you</p>
+                    <div class="w3-group">
+                        <label class="w3-label">Name</label>
+                        <input class="w3-input" type="text">
+                    </div>
+                    <div class="w3-group">
+                        <label class="w3-label">Email</label>
+                        <input class="w3-input" type="text">
+                    </div>
+                    <div class="w3-group">
+                        <label class="w3-label">Phone No</label>
+                        <input class="w3-input" type="number">
+                    </div>
+                    <div class="w3-group">
+                        <textarea class="w3-input" placeholder="Write your requirements" required></textarea>
+                        <label class="w3-label"></label>
+                    </div>
+                    <button type="button" class="w3-btn w3-right w3-red">CONTACT ME</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock footer %}
 
 <script>
     function myFunction() {

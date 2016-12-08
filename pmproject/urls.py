@@ -36,7 +36,7 @@ login_pattern_urls = patterns('',
                           )
 
 new_project_idea_urls = patterns('',
-                                 url(r'new-project-idea/', include('newProjectIdeaManagement.urls')),
+                                 url(r'new-project-idea', include('newProjectIdeaManagement.urls')),
                                  url(r'api/new-project-idea/', include('newProjectIdeaManagement.api_urls'))
                                  )
 

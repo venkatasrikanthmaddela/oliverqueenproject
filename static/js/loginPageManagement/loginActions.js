@@ -49,7 +49,7 @@ $( document ).ready(function() {
                 window.pmproject.myAccount.setAccountName(data["name"]);
                 window.pmproject.setNewCSRFToken();
                 if (window.location.pathname == "/user-action/login"){
-                    window.location = ""
+                    window.location = "/"
                 }
             },
             "error": function(){

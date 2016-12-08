@@ -12,7 +12,7 @@ $(document).ready(function(){
                 window.pmproject.myAccount.setAccountName(data["result"]);
                 window.pmproject.setNewCSRFToken();
                 if (window.location.pathname == "/new-project-idea"){
-                    window.location = "/new-project-idea/success"
+                    saveProjectIdea(projectIdeaElement);
                 }
             },
             "error": function(){
@@ -31,7 +31,7 @@ $(document).ready(function(){
                 window.pmproject.myAccount.setAccountName(data["name"]);
                 window.pmproject.setNewCSRFToken();
                 if (window.location.pathname == "/new-project-idea"){
-                    window.location = "/new-project-idea/success";
+                    saveProjectIdea(projectIdeaElement);
                 }
             },
             "error": function(){
@@ -46,10 +46,12 @@ $(document).ready(function(){
             saveProjectIdea(elementData);
         },
         "error": function(){
+            projectIdeaElement = elementData;
             document.getElementById('loginModal').style.display='block';
         }
     });
     });
+    var projectIdeaElement = "";
 
 });
 function saveProjectIdea(currentElement){

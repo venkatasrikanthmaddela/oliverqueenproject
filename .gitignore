@@ -26,3 +26,15 @@ pmproject/exceptions.pyc
 pmproject/templatetags/__init__.pyc
 pmproject/utils.pyc
 .idea
+newProjectIdeaManagement/__init__.pyc
+newProjectIdeaManagement/api_urls.pyc
+newProjectIdeaManagement/api_views.pyc
+newProjectIdeaManagement/models.pyc
+newProjectIdeaManagement/urls.pyc
+newProjectIdeaManagement/views.pyc
+pmproject/templatetags/custom_filters.pyc
+userDashboardManagement/__init__.pyc
+userDashboardManagement/urls.pyc
+userDashboardManagement/view_utils.pyc
+userDashboardManagement/views.pyc
+*.pyc

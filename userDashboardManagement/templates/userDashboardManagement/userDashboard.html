@@ -1,0 +1,59 @@
+{% extends 'userDashboardBase.html' %}
+{% block user_details_content %}
+    <div class="w3-card-2 w3-center">
+        <i class="fa fa-smile-o w3-margin-top w3-xxlarge"></i>
+        <h3 class="w3-margin-top">Hi, {{ request.user.name }}. Its good to have you here</h3>
+        <h5 class="w3-margin-bottom">Explore your activities in pickmyproject</h5>
+    </div>
+    <div class="w3-row w3-margin-top ">
+        <div class="w3-col s4 w3-center w3-padding">
+            <div class="w3-card-4 w3-center">
+                <header class="w3-center w3-teal w3-text-white w3-padding-8">
+                    <i class="fa fa-hand-o-up" style="font-size:60px;color:white"></i>
+                    <h5>Your project Requests</h5>
+                </header>
+                <div class=" w3-container w3-center">
+                    <h4>Total project Requests</h4>
+                    {% if  userDashboardDetails.projectRequests %}
+                        <h4>{{ userDashboardDetails.projectRequests }}</h4>
+                    {% else %}
+                        <h4>0</h4>
+                    {% endif %}
+                    <a class="w3-btn w3-red">EXPLORE NOW</a>
+                </div>
+                <footer class="w3-container w3-margin-top w3-teal"><p></p></footer>
+            </div>
+        </div>
+        <div class="w3-col s4 w3-center w3-padding">
+            <div class="w3-card-4 w3-center">
+                <header class="w3-center w3-teal w3-text-white w3-padding-8">
+                    <i class="fa fa-diamond" style="font-size:60px;color:white"></i>
+                    <h5>Your New Project Ideas</h5>
+                </header>
+                <div class=" w3-container w3-center">
+                    <h4>Total New Project Ideas</h4>
+                    {% if  userDashboardDetails.newProjectIdeas %}
+                        <h4>{{ userDashboardDetails.newProjectIdeas|length }}</h4>
+                    {% else %}
+                        <h4>0</h4>
+                    {% endif %}
+                    <a class="w3-btn w3-red" href="{% url 'see-project-ideas' %}">EXPLORE NOW</a>
+                </div>
+                <footer class="w3-container w3-margin-top w3-teal"><p></p></footer>
+            </div>
+        </div>
+        <div class="w3-col s4 w3-center w3-padding">
+            <div class="w3-card-4 w3-center">
+            <header class="w3-center w3-teal w3-text-white w3-padding-8">
+                <i class="fa fa-user" style="font-size:60px;color:white"></i>
+                <h5>Your profile</h5>
+            </header>
+            <div class=" w3-container w3-center">
+                <h4>Always stay updated with your profile</h4>
+                <p class="small">check out your profile here</p>
+                <a class="w3-btn w3-red w3-padding-top">CHECK PROFILE</a>
+            </div>
+            <footer class="w3-container w3-margin-top w3-teal"><p></p></footer>
+        </div></div>
+    </div>
+{% endblock user_details_content %}

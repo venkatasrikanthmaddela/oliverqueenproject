@@ -25,3 +25,7 @@ class NewProjectIdeaRequestsPage(View):
         # new_project_idea_requests = NewProjectIdeaUploads.objects.filter(isDeleted=False).order_by('-createdAt')
         return render(request, 'adminOperations/newProjectIdeaRequest.html',
                       {"newProjectIdeaRequests": new_project_idea_requests})
+
+class BulkUploadProjects(View):
+    def get(self, request):
+        return render(request, 'adminOperations/importProjects.html')

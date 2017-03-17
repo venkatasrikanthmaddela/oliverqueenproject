@@ -67,6 +67,14 @@ class signUpUser(APIView):
             logger.error(get_log_string('error: '+str(e),request=request),exc_info=True)
             return Response({"error": str(e)}, 500)
 
+class checkUserLogin(APIView):
+    def get(self, request):
+        try:
+            email = request.user.email
+            return Response({"success":email}, 200)
+        except:
+            return Response({"error": "user is not logged in"}, 500)
+
 
 def create_user(name, email, phone, password, source='direct', additional_info={}, is_email_subscribed=False):
     USERMODEL = get_user_model()
@@ -94,7 +102,7 @@ def create_user(name, email, phone, password, source='direct', additional_info={
             addInfo[source] = additional_info
             user = USERMODEL.objects.create_user(email, phone, password, name, sources={source}, additionalInfo=addInfo,
                                                  user_type='user',is_email_subscribed=is_email_subscribed)
-            return True, {"name": user.name, "email": user.email}
+            return True, {"name": user.name, "email": user.email, "password":password}
     except IntegrityError as e:
         return False, {"message": 'User already exists'}
     except Exception as e:
@@ -107,6 +115,8 @@ def sign_up_directly(request):
     try:
         success, data = create_user(request.DATA['name'], request.DATA['email'], request.DATA['phoneNumber'], request.DATA['password'], source='direct', is_email_subscribed=request.DATA.get("isSubscribed", False))
         if success:
+            user = authenticate(email=data.get("email"), password=data.get("password"), type='user')
+            login(request, user)
             return Response({"name":data.get("name"), "email":data.get("email")}, 200)
         else:
             return Response({"error": data['message']}, 500)

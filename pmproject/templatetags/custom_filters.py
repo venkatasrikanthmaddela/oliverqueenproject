@@ -20,3 +20,10 @@ def get_IST_time_from_utc_time(datetime_obj):
     gmt = datetime_obj.replace(tzinfo=from_zone)
     local_time = gmt.astimezone(to_zone)
     return local_time
+
+@register.filter(name="getNameLabel")
+def get_user_name_lable(name_string):
+    if name_string:
+        name_string = name_string[:2]
+        name_string = name_string.upper()
+        return name_string

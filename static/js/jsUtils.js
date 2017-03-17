@@ -67,3 +67,12 @@
     };
 
 }(window.pmprojectutils = window.pmprojectutils || {}, jQuery) );
+
+function checklogin(){
+    if(window.pmproject.myAccount.accountMail){
+        return true;
+    }
+    else{
+        return false;
+    }
+}

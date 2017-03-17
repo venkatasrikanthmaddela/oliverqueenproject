@@ -30,13 +30,7 @@
                                     <p><b>Language:</b>  {{ each_project.project_frame_work }}</p>
                                     <p><b>Project For:</b> {{ each_project.target_stream }}</p>
                                     <p><b>IEE Paper:</b> {{ each_project.iee_paper }}</p>
-                                    <div class="w3-container w3-center">
-                                        <a class="w3-text-red edit-project" href="#"
-                                           data-id="{{ each_project.id }}" data-title="{{ each_project.project_title }}"
-                                           data-framework="{{ each_project.project_frame_work }}" data-target-stream="{{ each_project.target_stream }}"
-                                                {% if each_project.iee_paper %} data-iee-papers= "available" {% else %} data-iee-papers= "notAvailable" {% endif %}data-abstract="{{ each_project.abstract }}"><i class="fa fa-edit"></i>  Edit Details</a>
-                                        <a class="w3-text-red delete-project" data-id="{{ each_project.id }}" href=""><i class="fa fa-remove"></i>  Delete Project</a>
-                                    </div>
+                                    <a class="w3-center request-for-project w3-btn" type="button"  data-project-id="{{ each_project.id }}">Request project</a>
                                 </div>
                             </div>
                         </div>

@@ -96,6 +96,9 @@
     auth.logout = function (callbacks) {
         window.pmproject.getResponse("POST", "/account/api/logout", {}, callbacks);
     };
+    auth.checkUserLogin = function(callbacks){
+        window.pmproject.getResponse("GET", "/account/api/is-user-logged-in", {}, callbacks);
+    }
 
 }(window.pmproject.auth = window.pmproject.auth || {}, jQuery));
 

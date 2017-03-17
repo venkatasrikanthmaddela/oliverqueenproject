@@ -41,7 +41,7 @@ new_project_idea_urls = patterns('',
                                  )
 
 user_dashboard_urls = patterns('',
-                               url(r'user-action/my-account', include('userDashboardManagement.urls')),
+                               url(r'user-action/my-account/', include('userDashboardManagement.urls')),
                                )
 
 urlpatterns += landing_page_urls

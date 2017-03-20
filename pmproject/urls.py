@@ -44,8 +44,13 @@ user_dashboard_urls = patterns('',
                                url(r'user-action/my-account/', include('userDashboardManagement.urls')),
                                )
 
+all_projects_urls = patterns('',
+                             url(r'api/projects/', include('allProjectsManagement.api_urls')),
+                             )
+
 urlpatterns += landing_page_urls
 urlpatterns += admin_page_urls
 urlpatterns += login_pattern_urls
 urlpatterns += new_project_idea_urls
 urlpatterns += user_dashboard_urls
+urlpatterns += all_projects_urls

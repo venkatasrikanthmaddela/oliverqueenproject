@@ -1,29 +1,25 @@
 {% extends 'dahboardBase.html' %}
+
 {% block main_content %}
 
-        <div class="w3-container w3-teal w3-padding-64">
-            <h2><i class="fa fa-upload"></i>   Import Projects</h2>
-        </div>
-        <form class="w3-container w3-padding-top" id="uploadProjectForm">
-            <div class="w3-row-padding">
-                <div class="w3-third">
-                    <p>
-                        <label>Select Date</label>
-                        <input class="w3-input w3-border w3-padding-top" name="uploadDate" type="date" placeholder="One">
-                    </p>
-                </div>
-                <div class="w3-third">
-                    <p>
-                        <label>Select File</label>
-                        <input class="w3-padding-top" name="uploadFile" type="file">
-                    </p>
-                </div>
-                <div class="w3-third">
-                    <p>
-                        <label>Click to upload</label>
-                        <a class="w3-input w3-btn w3-small w3-teal w3-padding-top upload-projects" data-id="uploadProjectForm">UPLOAD</a>
-                    </p>
-                </div>
+    <div class="w3-container w3-teal w3-padding-64">
+        <h2><i class="fa fa-upload"></i>   Import Projects</h2>
+    </div>
+    <form class="w3-container w3-padding-top" id="uploadProjectForm">
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <p>
+                    <label>Select File</label>
+                    <input class="w3-padding-top" name="uploadFile" id="bulkUploadFile" type="file">
+                </p>
             </div>
-        </form>
+            <div class="w3-half">
+                <p>
+                    <label>Click to upload</label>
+                    <a class="w3-input w3-btn w3-small w3-teal w3-padding-top" id="bulk-upload-projects" data-id="uploadProjectForm">UPLOAD</a>
+                </p>
+            </div>
+        </div>
+    </form>
+    {% include 'alertModals.html' %}
 {% endblock main_content %}

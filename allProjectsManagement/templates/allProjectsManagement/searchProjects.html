@@ -1,45 +1,27 @@
 {% extends 'newBase.html' %}
 {% load custom_filters %}
 {% block main_content %}
-    <div class="w3-row w3-padding-48">
-        <div class="w3-col m1 w3-hide-small"><p></p></div>
-        <div class="w3-col m10 s12">
-            <form class="w3-container w3-padding">
-                <div class="w3-row-padding">
-                    <div class="w3-col s12 l10">
-                        <input type="text" class="w3-input" placeholder="Search Your Project Here...." required>
-                    </div>
-                    <div class="w3-col s12 l2">
-                        <a class="btn w3-red w3-input" href="" type="button"><i class="fa fa-search w3-large">  Search Project</i></a>
-                    </div>
-                </div>
-            </form>
-
-            {% if allProjects|length > 0 %}
-                {% for each_project in allProjects %}
-                    <div class="w3-container w3-center w3-padding-12">
-                        <div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal">
-                            <div class="w3-row">
-                                <div class="w3-col l8 s12">
-                                    <h3 class="w3-left">{{ each_project.project_title }}</h3><br>
-                                    <p class="w3-left">{{ each_project.abstract }}</p>
-                                </div>
-                                <div class="w3-col l4 s12">
-                                    <p><b>Date:</b>{{ each_project.createdAt|getISTTimeFromUTCTime }}</p>
-                                    <p><b>Uploded By:</b>  {{ each_project.uploaded_user }}</p>
-                                    <p><b>Language:</b>  {{ each_project.project_frame_work }}</p>
-                                    <p><b>Project For:</b> {{ each_project.target_stream }}</p>
-                                    <p><b>IEE Paper:</b> {{ each_project.iee_paper }}</p>
-                                    <a class="w3-center request-for-project w3-btn" type="button"  data-project-id="{{ each_project.id }}">Request project</a>
-                                </div>
-                            </div>
+    <div>
+        <div class="w3-row w3-padding-48">
+            <div class="w3-col m1 w3-hide-small"><p></p></div>
+            <div class="w3-col m10 s12">
+                <form class="w3-container w3-padding">
+                    <div class="w3-row-padding">
+                        <div class="w3-col s12 l10">
+                            <input type="text" class="w3-input" placeholder="Search Your Project Here...." required>
+                        </div>
+                        <div class="w3-col s12 l2">
+                            <a class="btn w3-red w3-input" href="" type="button"><i class="fa fa-search w3-large">  Search Project</i></a>
                         </div>
                     </div>
-                {% endfor %}
-            {% endif %}
-
+                </form>
+            </div>
+            <div class="w3-col m10 s12" ng-app="projectsListPageApp" ng-controller="ProjectsListPageController as projectController">
+                <h1 class="w3-center">Project Data</h1>
+                <div  ng-repeat="each_project in projectController.allProjects" class="w3-container w3-padding">
+                        <p class="center">{{ each_project.projectTitle }}</p>
+                </div>
+            </div>
         </div>
-        <div class="w3-col m1 w3-hide-small"><p></p></div>
     </div>
-
 {% endblock main_content %}

@@ -1,6 +1,22 @@
 .top-bar{
     background: white;
 }
+.ErrorAlert{
+    padding: 20px;
+    background-color: #ff3333; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 #right-navigation >li >a{
     background: white;
     color: black;

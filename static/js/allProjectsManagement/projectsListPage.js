@@ -10,8 +10,9 @@
         .controller('ProjectsListPageController', ProjectsListPageController)
         .service('ProjectsListPageService', ProjectsListPageService);
 
-    ProjectsListPageController.$inject=['ProjectsListPageService'];
-    function ProjectsListPageController(ProjectsListPageService){
+    ProjectsListPageController.$inject=['$scope', 'ProjectsListPageService'];
+    function ProjectsListPageController($scope, ProjectsListPageService)
+    {
         var projectsObjects = this;
 
         var activeProjectsPromise = ProjectsListPageService.getAllActiveProjects();

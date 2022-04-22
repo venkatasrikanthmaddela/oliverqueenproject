@@ -62,7 +62,7 @@ pygobject==3.12.0
 pymongo==3.1
 pyOpenSSL==0.13
 pyparsing==2.0.3
-PyPDF2==1.25.1
+PyPDF2==1.27.5
 pyserial==2.6
 pysmbc==1.0.14.1
 pysqlite==2.6.3
